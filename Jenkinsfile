@@ -7,7 +7,7 @@ node {
   checkout scm
 
   stage 'Build image'
-   sh '''echo "PATH = ${PATH}"'''
+   sh '''echo "whereis mvn"'''
    sh '''echo "M2_HOME = ${M2_HOME}"'''
 
   sh("docker build -t ${imageTag} .")
