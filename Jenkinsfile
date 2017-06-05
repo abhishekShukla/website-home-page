@@ -7,10 +7,7 @@ node {
   checkout scm
 
   stage 'Build image'
-   sh ("whereis mvn")
-   sh("locate mvn")
-   sh '''echo "M2_HOME = ${M2_HOME}"'''
-
+  mvn package
   sh("docker build -t ${imageTag} .")
 
   stage 'Push image to registry'
