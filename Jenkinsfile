@@ -7,7 +7,8 @@ node {
   checkout scm
 
   stage 'Build image'
-   sh '''echo "whereis mvn"'''
+   sh ("whereis mvn")
+   sh("locate mvn")
    sh '''echo "M2_HOME = ${M2_HOME}"'''
 
   sh("docker build -t ${imageTag} .")
