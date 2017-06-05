@@ -1,4 +1,8 @@
 node {
+  tools {
+      maven 'Maven 3.5.0'
+      jdk 'jdk8'
+  }
   def project = 'cogent-emblem-169721'
   def appName = 'website-home-page'
   def feSvcName = "${appName}"
@@ -7,7 +11,9 @@ node {
   checkout scm
 
   stage 'Build image'
-  sh("mvn package")
+   sh '''echo "PATH = ${PATH}"'''
+   sh '''echo "M2_HOME = ${M2_HOME}"'''
+
   sh("docker build -t ${imageTag} .")
 
   stage 'Push image to registry'
