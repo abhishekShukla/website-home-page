@@ -1,8 +1,8 @@
+tools {
+    maven 'Maven 3.5.0'
+    jdk 'jdk8'
+}
 node {
-  tools {
-      maven 'Maven 3.5.0'
-      jdk 'jdk8'
-  }
   def project = 'cogent-emblem-169721'
   def appName = 'website-home-page'
   def feSvcName = "${appName}"
