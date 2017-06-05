@@ -1,7 +1,3 @@
-tools {
-    maven 'Maven 3.5.0'
-    jdk 'jdk8'
-}
 node {
   def project = 'cogent-emblem-169721'
   def appName = 'website-home-page'
