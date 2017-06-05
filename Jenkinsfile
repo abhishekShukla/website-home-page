@@ -7,7 +7,8 @@ node {
   checkout scm
 
   stage 'Build image'
-  sh("mvn package")
+  def mvnHome = tool 'maven'
+  sh "${mvnHome}/bin/mvn clean install -DskipTests"
   sh("docker build -t ${imageTag} .")
 
   stage 'Push image to registry'
