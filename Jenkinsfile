@@ -7,7 +7,7 @@ node {
   checkout scm
 
   stage 'Build image'
-  sh("mvn package docker:build")
+  sh("docker build -t ${imageTag} .")
 
   stage 'Push image to registry'
   sh("gcloud docker push ${imageTag}")
