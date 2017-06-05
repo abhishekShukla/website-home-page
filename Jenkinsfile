@@ -7,6 +7,7 @@ node {
   checkout scm
 
   stage 'Build image'
+  sh("mvn package")
   sh("docker build -t ${imageTag} .")
 
   stage 'Push image to registry'
