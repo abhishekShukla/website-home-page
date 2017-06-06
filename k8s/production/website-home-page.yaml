@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: home-page
 spec:
-  replicas:
+  replicas: 3
   template:
     metadata:
       name: home-page
