@@ -19,6 +19,7 @@ node {
 
     // Roll out to production
     case "master":
+	sh("sed -i.bak 's#gcr.io/cogent-emblem-169721/website-home-page#${imageTag}#' ./k8s/production/*.yaml")
         sh("kubectl --namespace=production apply -f k8s/services/")
 	sh("kubectl --namespace=production apply -f k8s/production/")
         sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
